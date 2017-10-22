@@ -54,12 +54,17 @@ var velocity = new THREE.Vector3();
 
 function init() {
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff);
     scene.fog = new THREE.Fog(0xffffff, 0, 750);
+
     var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
     light.position.set(0.5, 1, 0.75);
     scene.add(light);
+
+
+
     controls = new THREE.PointerLockControls(camera);
     scene.add(controls.getObject());
     var onKeyDown = function(event) {
@@ -108,6 +113,11 @@ function init() {
     };
     document.addEventListener('keydown', onKeyDown, false);
     document.addEventListener('keyup', onKeyUp, false);
+
+
+
+
+
     raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, -1, 0), 0, 10);
     // floor
     geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
