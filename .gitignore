@@ -1,3 +1,5 @@
 
-
+.gitignore
 three.js/
+model/*.*
+prepros-6.config
